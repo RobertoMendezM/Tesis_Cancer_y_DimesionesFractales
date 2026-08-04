@@ -1,1 +1,1 @@
-# Tesis_Cancer_y_DimesionesFractales
+# Tesis: Cancer y Dimesiones Fractales
