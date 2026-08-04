@@ -24,7 +24,7 @@ Referencias:
 
 Editor:  Roberto Méndez Méndez
 Creado:  24 Junio 2026
-Editado: 30 Junio 2026
+Editado: 3 Agosto 2026
 """
 
 import numpy as np
@@ -61,20 +61,21 @@ for n in range(max_iter):
     imagen[zona_acotada] = n
 
 # Graficar el resultado
-plt.figure(figsize=(8, 8))
-# El conjunto "lleno" son las zonas claras (máximas iteraciones)
-plt.imshow(imagen, extent=(x_min, x_max, y_min, y_max), cmap='inferno', origin='lower')
-plt.colorbar(label=f'Iteraciones antes de |z| > {R}')
-plt.title(f'Conjunto de Julial lleno "Conejo de Douady", c = {c.real}+{c.imag}j')
-plt.xlabel('Eje Real')
-plt.ylabel('Eje Imaginario')
-plt.show()
-
-# Código para guardar la figura en un archivo
 plt.figure(figsize=(10, 10))
-plt.imshow(imagen, extent=(x_min, x_max, y_min, y_max), cmap='OrRd', origin='lower')
-plt.axis('off') 
-# Guarda la imagen  en alta definición sin bordes blancos
-plt.savefig('julia_hd_Conejo de Douady.png', dpi=300, bbox_inches='tight', pad_inches=0)
+# El conjunto "lleno" son las zonas claras (máximas iteraciones)
+plt.imshow(imagen, extent=(x_min, x_max, y_min, y_max), cmap='OrRd',
+           origin='lower')
+cbar = plt.colorbar(shrink=0.75)
+cbar.ax.set_ylabel(f'Iteraciones antes de |z| > {R}', fontsize=14)
+plt.title(f'Conjunto de Julia "Conejo de Douady" \n c = {c.real}{c.imag:+}j',
+          fontsize=15)
+plt.xlabel('Eje Real', fontsize=14)
+plt.ylabel('Eje Imaginario',  fontsize=14)
+
+plt.tight_layout()
+plt.savefig('fig_Fractal_Julia_Conejo de Douady.png', dpi=300)
+plt.show()
 plt.close()
 print("Imagen guardada con éxito como 'julia_hd_Conejo de Douady.png'")
+
+
