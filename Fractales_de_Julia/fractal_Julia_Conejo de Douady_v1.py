@@ -18,13 +18,15 @@ Acciones:
    al guardar el archivo. 
 
 Referencias:
-    - Singh  & Raman (2026). Python for Mathematical Thinking, Springer.    
-    - https://matplotlib.org/stable/users/explain/colors/colormaps.html
-    - Gemini
-
-Editor:  Roberto Méndez Méndez
+    - Singh  & Raman (2026). Python for Mathematical Thinking, Springer.  
+      pag 358
+    - Lapidus \&  Radunović (2020). \textit{An Invitation to Fractal 
+      Geometry Fractal Dimensions, Self-Similarity  and Fractal Curves}, AMS.   
+      pag 39  
+    
+Editor:  Roberto Méndez Méndez / Gemini
 Creado:  24 Junio 2026
-Editado: 3 Agosto 2026
+Editado: 2 Septiembre 2026
 """
 
 import numpy as np
@@ -73,9 +75,10 @@ plt.xlabel('Eje Real', fontsize=14)
 plt.ylabel('Eje Imaginario',  fontsize=14)
 
 plt.tight_layout()
-plt.savefig('fig_Fractal_Julia_Conejo de Douady.png', dpi=300)
+plt.savefig('fig_Fractal_Julia_Conejo_de_Douady.png', dpi=300)
 plt.show()
 plt.close()
-print("Imagen guardada con éxito como 'julia_hd_Conejo de Douady.png'")
+print("Imagen guardada con éxito como ",
+       "'fig_Fractal_Julia_Conejo_de_Douady.png'")
 
 
