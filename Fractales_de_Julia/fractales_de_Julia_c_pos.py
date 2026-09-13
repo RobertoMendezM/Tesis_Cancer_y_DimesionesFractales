@@ -5,6 +5,21 @@ Fractales de Julia con c = a + bj   a >= 0 y b >= 0
 Proyecto: Tesis Maestría 
 
 Objetivo: Ver formas de Conjuntos de Julia con c = a + bj   a >= 0 y b >= 0 
+          no ambos cero
+Notas:
+   Se obtienen varios conjuntos de Julia K(f_c) llenos, aplicando el "algoritmo 
+   de tiempo de escape". En este evaluamos recursivamente la expresión 
+   z_i+1 = (z_i)^2 + c,  con i=0,1,2,..; z_0 un complejo y c complejos 
+   constantes diferentes para cada caso, siendo c_real >= 0 y c.imag >=0. 
+   Si la sucesión {z_n} converge (i.e.  |z_i+1| < 2)  entonces z_0 esta en 
+   K(f_c), si por el contrario en algún momento |z_i+1| > 2 la sucesión diverge 
+   y ese z_0 no perntenece a K(f_c). 
+   Para implementar el Algoritmo "tiempo de escape" se usa una forma matricial 
+   y  una "mascara".
+
+Acciones:
+   1.- Obtiene y grafica diversos e fractales de Julia 
+   2.- Guarda la imagen del Fractal . 
 
 Referencias:
     * Web: https://paulbourke.net/fractals/juliaset/
@@ -20,7 +35,7 @@ Editado: 2 Septiembre 2026
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parámetros de la imagen y del plano complejo
+# Parámetros 
 ancho, alto = 1500, 1500
 x_min, x_max = -1.3, 1.3
 y_min, y_max = -1.3, 1.3
@@ -58,7 +73,7 @@ for i in range(len(c)):
         # Guardar el número de iteración en las posiciones de puntos acotados
         imagen[zona_acotada] = n
 
-    # Graficar el resultado
+    # # GRÁFICA
     # El conjunto "lleno" son las zonas claras (máximas iteraciones)
     im = axs[j, i%2].imshow(imagen, extent=(x_min, x_max, y_min, y_max), 
                                            cmap='GnBu', origin='lower')
