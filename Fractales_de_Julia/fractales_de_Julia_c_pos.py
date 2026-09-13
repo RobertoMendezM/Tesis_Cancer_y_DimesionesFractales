@@ -29,7 +29,7 @@ Referencias:
 
 Editor:  Roberto Méndez Méndez
 Creado:  3 Agosto 2026
-Editado: 2 Septiembre 2026
+Editado: 13 Septiembre 2026
 """
 
 import numpy as np
@@ -88,7 +88,8 @@ for i in range(len(c)):
         j = j + 1
 
 plt.tight_layout()
-fig.savefig('fig_Fractales_de_Julia_c_pos.png', dpi=400)
+fig.savefig('fig_Fractales_de_Julia_c_pos.png', dpi=400, bbox_inches='tight',
+             pad_inches=0.16)
 plt.show()
 plt.close()
 print("Imagen guardada con éxito como 'fig_Fractales_de_Julia_c_pos.png'")
