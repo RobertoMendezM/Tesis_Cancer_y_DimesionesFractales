@@ -72,13 +72,14 @@ plt.imshow(imagen, extent=(x_min, x_max, y_min, y_max), cmap='OrRd',
            origin='lower')
 cbar = plt.colorbar(shrink=0.75)
 cbar.ax.set_ylabel(f'Iteraciones antes de |z| > {R}', fontsize=14)
-plt.title(f'Conjunto de Julia "Conejo de Douady" \n c = {c.real}{c.imag:+}j',
-          fontsize=15)
+plt.title(f'\n Conjunto de Julia "Conejo de Douady" \n c = {c.real}{c.imag:+}j \n',
+          fontsize=20)
 plt.xlabel('Eje Real', fontsize=14)
 plt.ylabel('Eje Imaginario',  fontsize=14)
 
 plt.tight_layout()
-plt.savefig('fig_Fractal_Julia_Conejo_de_Douady.png', dpi=300)
+plt.savefig('fig_Fractal_Julia_Conejo_de_Douady.png', dpi=300, 
+            bbox_inches='tight', pad_inches=0.16)
 plt.show()
 plt.close()
 print("Imagen guardada con éxito como ",
